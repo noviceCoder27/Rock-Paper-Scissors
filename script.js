@@ -37,6 +37,40 @@ function playRound(playerSelection,computerSelection) {
     }
 }
 
-const playerSelection = "rock";
-const computerSelection = computerPlay();
+let playerSelection = window.prompt('Enter your choice');
+let computerSelection = computerPlay();
 console.log(playRound(playerSelection,computerSelection));
+
+function game() {
+    let playerScore = 0;
+    let computerScore = 0;
+    for(let i = 0; i < 5; i++) {
+        computerSelection = computerPlay();
+        let str;
+        str = playRound(playerSelection,computerSelection);
+        console.log(str);
+        if(str === "You win! Paper beats Rock") {
+            ++playerScore;
+            console.log(`Player Score: ${playerScore}`);
+        } else if(str === "You Win! Rock beats Paper" ) {
+            ++playerScore;
+            console.log(`Player Score: ${playerScore}`);
+        } else if(str === "You win! Scissors beats Paper") {
+            ++playerScore;
+            console.log(`Player Score: ${playerScore}`);
+        } else if(str == "Go Again!"){
+        } else {
+            ++computerScore;
+            console.log(`Computer Score: ${computerScore}`);
+        }
+    }
+    if(playerScore > computerScore) {
+        console.log("Player wins!");
+    } else if(computerScore > playerScore) {
+        console.log("Computer wins!");
+    } else {
+        console.log("It's a tie!");
+    }
+}
+console.log(game());
+
