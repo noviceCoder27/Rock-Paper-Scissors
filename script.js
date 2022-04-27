@@ -59,6 +59,8 @@ function game() {
             ++playerScore;
             console.log(`Player Score: ${playerScore}`);
         } else if(str == "Go Again!"){
+            console.log(`Player Score: ${playerScore}`);
+            console.log(`Computer Score: ${computerScore}`);
         } else {
             ++computerScore;
             console.log(`Computer Score: ${computerScore}`);
